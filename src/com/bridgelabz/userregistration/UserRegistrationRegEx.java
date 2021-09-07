@@ -36,6 +36,17 @@ public class UserRegistrationRegEx
 		else
 			System.out.println("Entered email address "+emailAddress+" is INVALID");
 	}
+
+	public void phoneNumberValidator(String phoneNumber) 
+	{
+		Pattern pattern=Pattern.compile("^[0-9]{2}\\s{1}[0-9]{10}$"); 
+		Matcher matcher=pattern.matcher(phoneNumber);
+		if(matcher.matches())
+			System.out.println("Entered phone number "+phoneNumber+" is VALID");
+		else
+			System.out.println("Entered phone number "+phoneNumber+" is INVALID");
+	}
+
 	
 	public static void main(String[] args) 
 	{
@@ -43,13 +54,16 @@ public class UserRegistrationRegEx
 		UserRegistrationRegEx userRegistration=new UserRegistrationRegEx();
 		Scanner scanner=new Scanner(System.in);
 		System.out.println("Enter valid FirstName and LastName:");
-		String firstName=scanner.next();
-		String lastName=scanner.next();
+		String firstName=scanner.nextLine();
+		String lastName=scanner.nextLine();
 		System.out.println("Enter valid Email address:");
-		String emailAddress=scanner.next();
+		String emailAddress=scanner.nextLine();
+		System.out.println("Enter valid Phone Number:");
+		String phoneNumber=scanner.nextLine();
 		userRegistration.firstNameValidator(firstName);
 		userRegistration.lastNameValidator(lastName);
 		userRegistration.emailValidator(emailAddress);
+		userRegistration.phoneNumberValidator(phoneNumber);
 			
 
 	}
