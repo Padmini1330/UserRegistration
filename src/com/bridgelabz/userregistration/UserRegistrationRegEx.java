@@ -47,6 +47,17 @@ public class UserRegistrationRegEx
 			System.out.println("Entered phone number "+phoneNumber+" is INVALID");
 	}
 
+
+	public void passwordValidator(String password) 
+	{
+		Pattern pattern=Pattern.compile("^[A-Za-z0-9]{8,}$"); 
+		Matcher matcher=pattern.matcher(password);
+		if(matcher.matches())
+			System.out.println("Entered password "+password+" is VALID");
+		else
+			System.out.println("Entered password "+password+" is INVALID");
+		
+	}
 	
 	public static void main(String[] args) 
 	{
@@ -60,13 +71,17 @@ public class UserRegistrationRegEx
 		String emailAddress=scanner.nextLine();
 		System.out.println("Enter valid Phone Number:");
 		String phoneNumber=scanner.nextLine();
+		System.out.println("Enter valid Password:");
+		String password=scanner.nextLine();
 		userRegistration.firstNameValidator(firstName);
 		userRegistration.lastNameValidator(lastName);
 		userRegistration.emailValidator(emailAddress);
 		userRegistration.phoneNumberValidator(phoneNumber);
+		userRegistration.passwordValidator(password);
 			
 
 	}
+
 
 }
 
