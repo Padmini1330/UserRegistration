@@ -29,12 +29,12 @@ public class UserRegistrationRegEx
 	
 	public void emailValidator(String emailAddress) 
 	{
-		Pattern pattern=Pattern.compile("^[a-zA-Z]+[a-zA-Z0-9]*[_+-.]?[a-zA-Z0-9]*[@]{1}[a-zA-Z0-9]+[.]{1}[a-z]+[.]?[a-z]{2}$"); 
+		Pattern pattern=Pattern.compile("^[a-zA-Z]+[a-zA-Z0-9]*[_+-.]?[a-zA-Z0-9]+[@]{1}[a-zA-Z0-9]+[.]{1}[a-z]+[.]?[a-z]+$"); 
 		Matcher matcher=pattern.matcher(emailAddress);
 		if(matcher.matches())
-			System.out.println("Entered email address "+emailAddress+" is VALID");
+			System.out.println("Entered emailAddressaddress "+emailAddress+" is VALID");
 		else
-			System.out.println("Entered email address "+emailAddress+" is INVALID");
+			System.out.println("Entered emailAddressaddress "+emailAddress+" is INVALID");
 	}
 
 	public void phoneNumberValidator(String phoneNumber) 
@@ -79,7 +79,79 @@ public class UserRegistrationRegEx
 		userRegistration.phoneNumberValidator(phoneNumber);
 		userRegistration.passwordValidator(password);
 			
+		System.out.println("Check for VALID emails");
+		
+		emailAddress= "abc@bridgelabz.co.in";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc@gmail.com.com";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc@yahoo.com";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc@1.com";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc-100@yahoo.com";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc.100@yahoo.com";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc111@abc.com";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc-100@abc.net";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc.100@abc.com.au";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc+100@gmail.com";
+		userRegistration.emailValidator(emailAddress);
+		
 
+		System.out.println("Check for INVALID emails");
+		
+		emailAddress= ".abc@abc.com";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc@.com.my";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc@abc@gmail.com";
+		userRegistration.emailValidator(emailAddress);
+		
+		emailAddress= "abc()*@gmail.com";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc..2002@gmail.com";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc.@gmail.com";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc123@.com";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc123@.com.com";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc123@gmail.a";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc@%*.com";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc@gmail.com.1a";
+		userRegistration.emailValidator(emailAddress);
+
+		emailAddress= "abc@gmail.com.aa.au";
+		userRegistration.emailValidator(emailAddress);
 	}
 
 
