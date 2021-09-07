@@ -50,7 +50,7 @@ public class UserRegistrationRegEx
 
 	public void passwordValidator(String password) 
 	{
-		Pattern pattern=Pattern.compile("^(?=.*[A-Z])(?=.*[0-9]).{8,}$"); 
+		Pattern pattern=Pattern.compile("^(?=.*[A-Z])(?=.*[0-9])(?=.*[@!#$%&?\"]).{8,}$"); 
 		Matcher matcher=pattern.matcher(password);
 		if(matcher.matches())
 			System.out.println("Entered password "+password+" is VALID");
