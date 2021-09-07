@@ -26,7 +26,17 @@ public class UserRegistrationRegEx
 		else
 			System.out.println("Entered LastName "+lastName+" is INVALID");
 	}
-
+	
+	public void emailValidator(String emailAddress) 
+	{
+		Pattern pattern=Pattern.compile("^[a-zA-Z]+[a-zA-Z0-9]*[_+-.]?[a-zA-Z0-9]*[@]{1}[a-zA-Z0-9]+[.]{1}[a-z]+[.]?[a-z]{2}$"); 
+		Matcher matcher=pattern.matcher(emailAddress);
+		if(matcher.matches())
+			System.out.println("Entered email address "+emailAddress+" is VALID");
+		else
+			System.out.println("Entered email address "+emailAddress+" is INVALID");
+	}
+	
 	public static void main(String[] args) 
 	{
 		System.out.println("**Welcome to User Registration Validation**");
@@ -35,8 +45,11 @@ public class UserRegistrationRegEx
 		System.out.println("Enter valid FirstName and LastName:");
 		String firstName=scanner.next();
 		String lastName=scanner.next();
+		System.out.println("Enter valid Email address:");
+		String emailAddress=scanner.next();
 		userRegistration.firstNameValidator(firstName);
 		userRegistration.lastNameValidator(lastName);
+		userRegistration.emailValidator(emailAddress);
 			
 
 	}
