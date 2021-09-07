@@ -79,7 +79,9 @@ public class UserRegistrationRegEx
 		userRegistration.phoneNumberValidator(phoneNumber);
 		userRegistration.passwordValidator(password);
 			
+		
 		System.out.println("Check for VALID emails");
+		System.out.println();
 		
 		emailAddress= "abc@bridgelabz.co.in";
 		userRegistration.emailValidator(emailAddress);
@@ -110,10 +112,11 @@ public class UserRegistrationRegEx
 		
 		emailAddress= "abc+100@gmail.com";
 		userRegistration.emailValidator(emailAddress);
+		System.out.println();
 		
 
 		System.out.println("Check for INVALID emails");
-		
+		System.out.println();
 		emailAddress= ".abc@abc.com";
 		userRegistration.emailValidator(emailAddress);
 		
